@@ -1,0 +1,56 @@
+/* Styles for the Add Pokémon Form */
+.add-pokemon-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.add-pokemon-form div {
+    margin-bottom: 15px;
+}
+
+.add-pokemon-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-pokemon-form select,
+.add-pokemon-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.add-pokemon-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-pokemon-form button:hover {
+    background-color: #45a049;
+}
+
+.add-pokemon-form p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.add-pokemon-form p.error {
+    color: red;
+}

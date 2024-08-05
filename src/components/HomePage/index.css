@@ -1,0 +1,59 @@
+/* index.css */
+
+.homepage {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dropdown-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dropdown {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.pokemon-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.pokemon {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pokemon button {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.pokemon-actions button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: not-allowed; 
+    opacity: 0.5;
+  }
+  
+  .pokemon-actions button:disabled {
+    background-color: #d3d3d3;
+  }
+  
