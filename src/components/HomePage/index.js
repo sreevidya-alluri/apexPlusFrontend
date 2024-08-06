@@ -5,8 +5,7 @@ const HomePage = () => {
     const [owners, setOwners] = useState([]);
     const [selectedOwner, setSelectedOwner] = useState('');
     const [pokemons, setPokemons] = useState([]);
-    //eslint-disable-next-line
-    const [pokemonStates, setPokemonStates] = useState({}); // Initialize as an empty object
+    const [pokemonStates, setPokemonStates] = useState({});
     const containerRef = useRef(null);
 
     // Fetch Pokémon owners from the API
@@ -162,6 +161,25 @@ const HomePage = () => {
                             ))}
                         </tbody>
                     </table>
+                    <div>
+                        {/* Optional: Render Pokémon based on pokemonStates */}
+                        {pokemons.map(pokemon => {
+                            const state = pokemonStates[pokemon._id] || {};
+                            return (
+                                <div
+                                    key={pokemon._id}
+                                    style={{
+                                        position: 'absolute',
+                                        left: state.position?.x,
+                                        top: state.position?.y,
+                                        visibility: state.isVisible ? 'visible' : 'hidden'
+                                    }}
+                                >
+                                    {pokemon.name}
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </div>
