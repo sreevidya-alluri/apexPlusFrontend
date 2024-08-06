@@ -1,5 +1,7 @@
 
 import axios from 'axios';
+axios.defaults.baseURL = 'https://apex-plus-backend-xxx.vercel.app';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const API_BASE_URL='https://apex-plus-backend-xxx.vercel.app';
 export const getPokemons = () => {
