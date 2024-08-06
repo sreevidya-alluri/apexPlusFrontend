@@ -5,7 +5,6 @@ axios.defaults.baseURL = 'https://apex-plus-backend-xxx.vercel.app';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 // Define API base URL
-const API_BASE_URL = 'https://apex-plus-backend-xxx.vercel.app';
 
 // Helper function to handle errors
 const handleError = (error) => {
