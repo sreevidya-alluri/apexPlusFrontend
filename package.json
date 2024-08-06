@@ -14,7 +14,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "https://apex-plus-backend-occtua7fi-sree-vidyas-projects.vercel.app",
+  "proxy": "https://apex-plus-backend-xxx.vercel.app",
 
   "scripts": {
     "start": "react-scripts start",
