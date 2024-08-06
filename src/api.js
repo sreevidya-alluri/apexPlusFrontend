@@ -1,7 +1,8 @@
 // api.js
 import axios from 'axios';
 
-const API_BASE_URL = "https://apex-plus-backend-occtua7fi-sree-vidyas-projects.vercel.app/"
+const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://apex-plus-backend-occtua7fi-sree-vidyas-projects.vercel.app';
+
 
 export const getPokemons = () => {
   return axios.get(`${API_BASE_URL}/api/pokemons`);
