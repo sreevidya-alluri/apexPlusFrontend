@@ -1,11 +1,7 @@
 // api.js
 import axios from 'axios';
-axios.defaults.baseURL = 'https://apex-plus-backend-occtua7fi-sree-vidyas-projects.vercel.app';
-axios.defaults.headers.post['Content-Type'] = 'application/json';
 
-
-const API_BASE_URL = 'https://apex-plus-backend-occtua7fi-sree-vidyas-projects.vercel.app';
-
+const API_BASE_URL=process.env.REACT_APP_API_BASE_URL;
 
 export const getPokemons = () => {
   return axios.get(`${API_BASE_URL}/api/pokemons`);
