@@ -1,30 +1,74 @@
-
 import axios from 'axios';
+
+// Set up Axios defaults
 axios.defaults.baseURL = 'https://apex-plus-backend-xxx.vercel.app';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
-const API_BASE_URL='https://apex-plus-backend-xxx.vercel.app';
-export const getPokemons = () => {
-  return axios.get(`${API_BASE_URL}/api/pokemons`);
+// Define API base URL
+const API_BASE_URL = 'https://apex-plus-backend-xxx.vercel.app';
+
+// Helper function to handle errors
+const handleError = (error) => {
+  console.error('API Error:', error.response || error.message || error);
+  throw error; // Re-throw the error to be handled by the calling function
 };
 
-export const addPokemon = (pokemon) => {
-  return axios.post(`${API_BASE_URL}/api/pokemons`, pokemon);
+// Function to get all Pokémon
+export const getPokemons = async () => {
+  try {
+    const response = await axios.get('/api/pokemons');
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
 };
 
-export const updatePokemon = (id, pokemon) => {
-  return axios.put(`${API_BASE_URL}/api/pokemons/${id}`, pokemon);
+// Function to add a new Pokémon
+export const addPokemon = async (pokemon) => {
+  try {
+    const response = await axios.post('/api/pokemons', pokemon);
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
 };
 
-export const deletePokemon = (id) => {
-  return axios.delete(`${API_BASE_URL}/api/pokemons/${id}`);
+// Function to update an existing Pokémon
+export const updatePokemon = async (id, pokemon) => {
+  try {
+    const response = await axios.put(`/api/pokemons/${id}`, pokemon);
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
 };
 
-export const getPokemonById = (id) => {
-  return axios.get(`${API_BASE_URL}/api/pokemons/${id}`);
+// Function to delete a Pokémon by ID
+export const deletePokemon = async (id) => {
+  try {
+    const response = await axios.delete(`/api/pokemons/${id}`);
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
+};
+
+// Function to get a Pokémon by ID
+export const getPokemonById = async (id) => {
+  try {
+    const response = await axios.get(`/api/pokemons/${id}`);
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
 };
 
 // Example function for getting users, if needed
-export const getUsers = () => {
-  return axios.get(`${API_BASE_URL}/api/users`);
+export const getUsers = async () => {
+  try {
+    const response = await axios.get('/api/users');
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
 };
