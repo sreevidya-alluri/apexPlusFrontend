@@ -1,8 +1,7 @@
 
 import axios from 'axios';
 
-const API_BASE_URL=process.env.REACT_APP_API_BASE_URL;
-
+const API_BASE_URL='https://apex-plus-backend-xxx.vercel.app';
 export const getPokemons = () => {
   return axios.get(`${API_BASE_URL}/api/pokemons`);
 };
