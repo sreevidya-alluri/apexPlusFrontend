@@ -9,8 +9,6 @@ const AddPokemon = () => {
     const [noOfPokemon, setNoOfPokemon] = useState('');
     const [pokemonOwnerName, setPokemonOwnerName] = useState('');
     const [pokemons, setPokemons] = useState([]);
-    const [filteredPokemons, setFilteredPokemons] = useState([]);
-    const [abilities, setAbilities] = useState([]);
     const [abilityList, setAbilityList] = useState([]);
     const navigate = useNavigate();
 

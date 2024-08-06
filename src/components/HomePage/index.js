@@ -5,7 +5,8 @@ const HomePage = () => {
     const [owners, setOwners] = useState([]);
     const [selectedOwner, setSelectedOwner] = useState('');
     const [pokemons, setPokemons] = useState([]);
-    const [pokemonStates, setPokemonStates] = useState({});
+    //eslint-disable-next-line
+    const [pokemonStates, setPokemonStates] = useState({}); // Initialize as an empty object
     const containerRef = useRef(null);
 
     // Fetch Pokémon owners from the API
@@ -14,7 +15,6 @@ const HomePage = () => {
             try {
                 const response = await fetch('https://pokeapi.co/api/v2/pokemon-species/');
                 const data = await response.json();
-                console.log('Owners fetched:', data.results);
                 const ownerNames = data.results.map(pokemon => pokemon.name);
                 setOwners(ownerNames);
                 if (ownerNames.length > 0) {
@@ -34,14 +34,7 @@ const HomePage = () => {
             const fetchPokemons = async () => {
                 try {
                     const response = await getPokemons();
-                    console.log('Pokemons fetched:', response.data);
-                    
-                    // Ensure that each Pokémon has a valid ownerName and other attributes
-                    const userPokemons = response.data.filter(pokemon => {
-                        console.log('Filtering Pokémon:', pokemon);
-                        return pokemon.ownerName === selectedOwner;
-                    });
-                    console.log('Filtered Pokemons:', userPokemons);
+                    const userPokemons = response.data.filter(pokemon => pokemon.ownerName === selectedOwner);
                     setPokemons(userPokemons);
 
                     setPokemonStates(userPokemons.reduce((acc, pokemon) => {
@@ -96,7 +89,6 @@ const HomePage = () => {
     }, []);
 
     const handlePokemonGo = (id) => {
-        console.log('Handle Pokemon Go:', id);
         setPokemonStates(prevState => ({
             ...prevState,
             [id]: {
@@ -107,7 +99,6 @@ const HomePage = () => {
     };
 
     const handlePokemonFlee = (id) => {
-        console.log('Handle Pokemon Flee:', id);
         setPokemonStates(prevState => ({
             ...prevState,
             [id]: {
@@ -118,7 +109,6 @@ const HomePage = () => {
     };
 
     const handlePokemonCease = (id) => {
-        console.log('Handle Pokemon Cease:', id);
         setPokemonStates(prevState => ({
             ...prevState,
             [id]: {
